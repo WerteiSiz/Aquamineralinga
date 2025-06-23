@@ -2,9 +2,7 @@
 
 Профессиональное ПО для анализа качества природных вод с открытым исходным кодом
 
-![GitHub last commit](https://img.shields.io/github/last-commit/werteisiz/aquaminerale/main)
 ![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 ## 📌 Содержание
 - [О проекте](#-о-проекте)
@@ -37,16 +35,26 @@
 
 ### Архитектура
 ```bash
-.
-├── core/               # Бизнес-логика
-│   ├── calculator.py   # Алгоритмы расчетов
-│   └── validator.py    # Проверка данных
-├── data/               # Образцы данных
-├── ui/                 # Интерфейс
-├── tests/              # Тесты
-└── requirements.txt    # Зависимости
+│
+├── import_module/
+│   └── import_module.py
+│  
+├── COLORS/  
+│   ├── Colors.py  
+│  
+├── pages/  
+│   ├── about.py  
+│   ├── comparison_page.py  
+│   ├── coordinates.py  
+│   ├── input_11_parametrs_page.py  
+│   ├── location.py  
+│   ├── methods.py  
+│   └── normative.py  
+│  
+└── save_def/  
+    └── save_function.py  
 ```
-##🌟 Возможности
+## 🌟 Возможности
 	
 | Модуль         |          Описание                 |
 |----------------|-----------------------------------|
@@ -59,7 +67,7 @@
 | Оффлайн-режим  |	Работа без интернета            |
 
 
-##🚀 Планы развития
+## 🚀 Планы развития
 Мобильная версия (Kivy) для сбора данных в реальном времени.
 ИИ-прогнозирование загрязнений (на основе исторических данных).
 Интеграция с IoT-датчиками для автоматического сбора проб.
