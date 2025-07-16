@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:16
+    env_file: .env
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    env_file: .env
+    restart: unless-stopped
+    container_name: "aquamaringa"
+    volumes:
+      - .:/aquamaringa
+    ports:
+      - "8083:8083"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pg_data:
